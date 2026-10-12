@@ -102,18 +102,31 @@ if (lightbox && galleryItems.length && typeof lightbox.showModal === 'function')
   const lbCap = lightbox.querySelector('.lb-cap');
   let current = 0;
   let opener = null;
+  // navega apenas pelas fotos visíveis no filtro atual
+  const visibleItems = () => galleryItems.filter((item) => !item.hidden);
   const show = (i) => {
-    current = (i + galleryItems.length) % galleryItems.length;
-    const img = galleryItems[current].querySelector('img');
+    const list = visibleItems();
+    current = (i + list.length) % list.length;
+    const img = list[current].querySelector('img');
     lbImg.src = img.currentSrc || img.src;
     lbImg.alt = img.alt;
-    lbCap.textContent = `${galleryItems[current].querySelector('figcaption').textContent}, ${current + 1} de ${galleryItems.length}`;
+    lbCap.textContent = `${list[current].querySelector('figcaption').textContent}, ${current + 1} de ${list.length}`;
   };
-  galleryItems.forEach((item, i) => {
+  galleryItems.forEach((item) => {
     item.querySelector('.g-open').addEventListener('click', (e) => {
       opener = e.currentTarget;
-      show(i);
+      show(visibleItems().indexOf(item));
       lightbox.showModal();
+    });
+  });
+
+  /* Filtro por procedimento */
+  const filterButtons = document.querySelectorAll('.g-filter');
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      filterButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      galleryItems.forEach((item) => { item.hidden = f !== 'all' && item.dataset.proc !== f; });
     });
   });
   lightbox.querySelector('.lb-close').addEventListener('click', () => lightbox.close());

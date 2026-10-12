@@ -513,3 +513,11 @@ h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 400; max-width: 16ch;
 .hero-actions .btn-ghost { border: 0; background: none; padding: 8px 0; min-height: 0; border-bottom: 1px solid rgba(192,192,192,.5); border-radius: 0; }
 .hero-actions .btn-ghost:hover { transform: none; border-color: var(--white); }
 @media (max-width: 600px) { .hero-actions .btn-ghost { width: auto; } }
+
+/* Filtro da galeria por procedimento */
+.g-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: -16px 0 32px; }
+.g-filter { font: 500 .92rem/1 var(--sans); color: var(--silver-light); background: transparent; border: 1px solid var(--line-dark); border-radius: 999px; padding: 12px 20px; min-height: 44px; cursor: pointer; transition: background-color .3s, color .3s, border-color .3s; }
+.g-filter:hover { border-color: var(--silver); }
+.g-filter[aria-pressed="true"] { background: var(--ice); color: var(--black); border-color: var(--ice); }
+.g-item[hidden] { display: none; }
+.testimonial-proc { display: inline-block; font-size: .85rem; color: var(--black) !important; background: var(--silver-light); padding: 4px 12px; border-radius: 999px; margin-bottom: 1rem; }
