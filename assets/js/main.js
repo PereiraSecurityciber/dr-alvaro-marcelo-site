@@ -171,3 +171,47 @@ document.querySelectorAll('.ig-embed').forEach((box) => {
       .catch(() => { link.target = '_blank'; link.rel = 'noopener'; });
   });
 });
+
+/* Efeito 3D nas fotos: inclinação com reflexo (mouse) e entrada em 3D (toque) */
+const photos3d = document.querySelectorAll('.g-item, .treatment-media, .portrait, .testimonial-video');
+if (!reduceMotion) {
+  photos3d.forEach((el) => {
+    el.classList.add('fx3d');
+    const glare = document.createElement('span');
+    glare.className = 'fx3d-glare';
+    glare.setAttribute('aria-hidden', 'true');
+    el.append(glare);
+  });
+
+  if (finePointer) {
+    photos3d.forEach((el) => {
+      let frame = 0;
+      el.addEventListener('pointermove', (e) => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          el.style.setProperty('--rx', `${(0.5 - y) * 12}deg`);
+          el.style.setProperty('--ry', `${(x - 0.5) * 12}deg`);
+          el.style.setProperty('--gx', `${x * 100}%`);
+          el.style.setProperty('--gy', `${y * 100}%`);
+          el.classList.add('is-tilting');
+        });
+      });
+      el.addEventListener('pointerleave', () => {
+        cancelAnimationFrame(frame);
+        el.classList.remove('is-tilting');
+        el.style.setProperty('--rx', '0deg');
+        el.style.setProperty('--ry', '0deg');
+      });
+    });
+  } else if ('IntersectionObserver' in window) {
+    const io3d = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('fx3d-in'); io3d.unobserve(entry.target); }
+      });
+    }, { threshold: 0.2 });
+    photos3d.forEach((el) => { el.classList.add('fx3d-touch'); io3d.observe(el); });
+  }
+}
