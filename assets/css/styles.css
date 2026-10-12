@@ -539,3 +539,12 @@ h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 400; max-width: 16ch;
 .ig-embed-load svg { width: 18px; height: 18px; }
 .ig-embed-placeholder p { font-size: .85rem; color: var(--muted); max-width: 26rem; margin: 0; }
 .ig-embed-placeholder a { font-size: .9rem; color: var(--silver-light); }
+
+/* Símbolo da marca mais presente */
+.brand img { width: 34px; }
+.footer-brand img { width: 46px; }
+.about-mark { opacity: .35; }
+
+/* Botões do WhatsApp em formato de pílula */
+.btn[data-wa] { border-radius: 999px; }
+.btn-wa { padding-left: 32px; padding-right: 32px; }
