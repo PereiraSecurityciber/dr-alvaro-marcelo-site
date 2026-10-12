@@ -60,7 +60,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
     navLinks.forEach((a) => a.setAttribute('aria-current', String(a.hash === `#${entry.target.id}`)));
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
-['inicio', 'tratamentos', 'sobre', 'contato'].forEach((id) => {
+['inicio', 'tratamentos', 'sobre', 'casos', 'contato'].forEach((id) => {
   const el = document.getElementById(id);
   if (el) sectionObserver.observe(el);
 });
@@ -83,24 +83,12 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   revealEls.forEach((el) => io.observe(el));
 }
 
-/* Inclinação 3D nos cartões (somente mouse) */
-if (finePointer && !reduceMotion) {
-  document.querySelectorAll('.tilt').forEach((card) => {
-    card.addEventListener('pointermove', (e) => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateZ(0)`;
-    });
-    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-  });
-}
 
-/* Dente 3D no hero */
-const canvas = document.getElementById('tooth3d');
+/* Escultura 3D no hero */
+const canvas = document.getElementById('sculpture3d');
 if (canvas) {
-  import('./tooth3d.js')
-    .then(({ initTooth }) => initTooth(canvas, { reduceMotion }))
+  import('./sculpture3d.js')
+    .then(({ initSculpture }) => initSculpture(canvas, { reduceMotion }))
     .catch(() => canvas.remove());
 }
 
@@ -111,4 +99,37 @@ if (waFloat && heroActions && 'IntersectionObserver' in window) {
   new IntersectionObserver(([entry]) => {
     waFloat.classList.toggle('is-hidden', entry.isIntersecting);
   }).observe(heroActions);
+}
+
+/* Galeria: lightbox acessível com <dialog> */
+const lightbox = document.getElementById('lightbox');
+const galleryItems = [...document.querySelectorAll('.g-item')];
+if (lightbox && galleryItems.length && typeof lightbox.showModal === 'function') {
+  const lbImg = lightbox.querySelector('img');
+  const lbCap = lightbox.querySelector('.lb-cap');
+  let current = 0;
+  let opener = null;
+  const show = (i) => {
+    current = (i + galleryItems.length) % galleryItems.length;
+    const img = galleryItems[current].querySelector('img');
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = `${galleryItems[current].querySelector('figcaption').textContent}, ${current + 1} de ${galleryItems.length}`;
+  };
+  galleryItems.forEach((item, i) => {
+    item.querySelector('.g-open').addEventListener('click', (e) => {
+      opener = e.currentTarget;
+      show(i);
+      lightbox.showModal();
+    });
+  });
+  lightbox.querySelector('.lb-close').addEventListener('click', () => lightbox.close());
+  lightbox.querySelector('.lb-prev').addEventListener('click', () => show(current - 1));
+  lightbox.querySelector('.lb-next').addEventListener('click', () => show(current + 1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.close(); });
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+  lightbox.addEventListener('close', () => opener?.focus());
 }

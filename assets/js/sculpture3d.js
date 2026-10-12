@@ -1,58 +1,8 @@
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
 
-const smooth = (a, b, x) => {
-  const t = Math.min(Math.max((x - a) / (b - a), 0), 1);
-  return t * t * (3 - 2 * t);
-};
-
-/* Molar estilizado: esfera deformada em coroa com cúspides e duas raízes */
-function buildToothGeometry() {
-  let geo = new THREE.SphereGeometry(1, 180, 180);
-  geo.deleteAttribute('normal');
-  geo.deleteAttribute('uv');
-  geo = mergeVertices(geo);
-  const pos = geo.attributes.position;
-  const v = new THREE.Vector3();
-
-  for (let i = 0; i < pos.count; i++) {
-    v.fromBufferAttribute(pos, i);
-    let { x, y, z } = v;
-    const r = Math.hypot(x, z);
-    const theta = Math.atan2(z, x);
-
-    // contorno levemente quadrado da coroa
-    const box = 1 + 0.07 * Math.cos(4 * theta);
-    x *= box * 1.02;
-    z *= box * 0.9;
-
-    if (y > 0) {
-      // face oclusal achatada, quatro cúspides e sulco central
-      const top = smooth(0.05, 0.55, y);
-      const cusps = 0.17 * (0.5 + 0.5 * Math.cos(4 * theta - Math.PI)) * Math.sin(Math.PI * Math.min(r * 1.25, 1));
-      const groove = 0.13 * Math.exp(-((r / 0.28) ** 2));
-      y = y * 0.6 + top * (cusps - groove);
-    } else {
-      // raízes: alongamento, afunilamento e furca entre as duas raízes
-      const t = -y;
-      const taper = 1 - 0.42 * smooth(0.15, 1, t);
-      const split = smooth(0.3, 1, t);
-      const ax = Math.abs(x);
-      x = x * taper * (1 - 0.25 * split) + Math.sign(x) * 0.2 * split;
-      z *= taper * (1 - 0.18 * split);
-      y = -(t * 0.55 + t ** 2.2 * 1.45);
-      y += split * (1 - smooth(0.0, 0.5, ax)) * 1.25;
-      // leve curvatura distal das raízes
-      x += Math.sign(x) * 0.06 * t ** 3;
-    }
-    pos.setXYZ(i, x, y + 0.55, z);
-  }
-  geo.computeVertexNormals();
-  return geo;
-}
-
-export function initTooth(canvas, { reduceMotion = false } = {}) {
+/* Escultura abstrata em prata líquida: esfera com deformação orgânica animada */
+export function initSculpture(canvas, { reduceMotion = false } = {}) {
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
@@ -64,35 +14,38 @@ export function initTooth(canvas, { reduceMotion = false } = {}) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, isSmall ? 1.5 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 1.3;
 
   const scene = new THREE.Scene();
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
   const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
-  camera.position.set(0, 0.1, 7.4);
+  camera.position.set(0, 0, 7.2);
 
   const group = new THREE.Group();
   scene.add(group);
 
-  const tooth = new THREE.Mesh(
-    buildToothGeometry(),
+  const seg = isSmall ? 72 : 110;
+  const geo = new THREE.SphereGeometry(1.15, seg, seg);
+  const pos = geo.attributes.position;
+  const base = Float32Array.from(pos.array);
+
+  const blob = new THREE.Mesh(
+    geo,
     new THREE.MeshPhysicalMaterial({
-      color: 0xd9d9d9,
+      color: 0xdedede,
       metalness: 1,
-      roughness: 0.17,
-      clearcoat: 0.7,
-      clearcoatRoughness: 0.12,
-      envMapIntensity: 1.15,
+      roughness: 0.12,
+      clearcoat: 0.8,
+      clearcoatRoughness: 0.08,
+      envMapIntensity: 1.2,
     }),
   );
-  tooth.rotation.set(0.18, -0.5, 0.12);
-  group.add(tooth);
+  group.add(blob);
 
-  // anel prateado e partículas discretas
   const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(1.75, 0.006, 8, 220),
+    new THREE.TorusGeometry(1.85, 0.006, 8, 220),
     new THREE.MeshStandardMaterial({ color: 0xc0c0c0, metalness: 1, roughness: 0.25 }),
   );
   ring.rotation.set(Math.PI / 2.35, 0.25, 0);
@@ -102,7 +55,7 @@ export function initTooth(canvas, { reduceMotion = false } = {}) {
   const pts = new Float32Array(count * 3);
   for (let i = 0; i < count; i++) {
     const a = Math.random() * Math.PI * 2;
-    const rad = 1.6 + Math.random() * 1.1;
+    const rad = 1.7 + Math.random() * 1.1;
     pts[i * 3] = Math.cos(a) * rad;
     pts[i * 3 + 1] = (Math.random() - 0.5) * 2.8;
     pts[i * 3 + 2] = Math.sin(a) * rad;
@@ -120,6 +73,23 @@ export function initTooth(canvas, { reduceMotion = false } = {}) {
   rim.position.set(4, -1, -3);
   scene.add(rim);
 
+  // deformação suave por soma de ondas (barata e sem dependências)
+  const v = new THREE.Vector3();
+  const deform = (t) => {
+    for (let i = 0; i < pos.count; i++) {
+      v.set(base[i * 3], base[i * 3 + 1], base[i * 3 + 2]);
+      const n = v.clone().normalize();
+      const d =
+        0.16 * Math.sin(n.x * 2.4 + t * 0.9) * Math.cos(n.y * 2.1 + t * 0.7) +
+        0.09 * Math.sin(n.z * 3.6 + n.y * 1.4 + t * 1.1) +
+        0.05 * Math.sin((n.x + n.z) * 5.2 - t * 1.3);
+      v.addScaledVector(n, d);
+      pos.setXYZ(i, v.x, v.y, v.z);
+    }
+    pos.needsUpdate = true;
+    geo.computeVertexNormals();
+  };
+
   const resize = () => {
     const w = canvas.clientWidth;
     const h = canvas.clientHeight;
@@ -132,6 +102,7 @@ export function initTooth(canvas, { reduceMotion = false } = {}) {
   new ResizeObserver(resize).observe(canvas);
 
   if (reduceMotion) {
+    deform(1.2);
     renderer.render(scene, camera);
     canvas.classList.add('is-ready');
     return;
@@ -160,10 +131,11 @@ export function initTooth(canvas, { reduceMotion = false } = {}) {
     pointer.y += (pointer.ty - pointer.y) * 0.05;
     const scroll = Math.min(window.scrollY / window.innerHeight, 1.2);
 
+    deform(t);
     group.scale.setScalar(0.7 + 0.3 * intro);
     group.position.y = Math.sin(t * 0.9) * 0.08 + scroll * 0.6;
-    tooth.rotation.y = -0.5 + t * 0.32 + (1 - intro) * -2.4 + pointer.x * 0.35 + scroll * 1.6;
-    tooth.rotation.x = 0.18 + pointer.y * 0.18;
+    blob.rotation.y = t * 0.18 + pointer.x * 0.4 + scroll * 1.2;
+    blob.rotation.x = pointer.y * 0.25;
     ring.rotation.z = t * 0.15;
     dust.rotation.y = -t * 0.05;
     renderer.render(scene, camera);
