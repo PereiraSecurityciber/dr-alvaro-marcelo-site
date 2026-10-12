@@ -60,7 +60,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
     navLinks.forEach((a) => a.setAttribute('aria-current', String(a.hash === `#${entry.target.id}`)));
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
-['inicio', 'tratamentos', 'sobre', 'casos', 'contato'].forEach((id) => {
+['inicio', 'tratamentos', 'casos', 'contato'].forEach((id) => {
   const el = document.getElementById(id);
   if (el) sectionObserver.observe(el);
 });
