@@ -16,7 +16,7 @@ export const SITE = {
     url: 'https://www.instagram.com/dr.alvaromarcelopr/',
   },
   pagamento: ['crédito', 'débito', 'Pix', 'dinheiro'],
-  regiao: 'Tatuapé · São Paulo/SP', // conforme bio do Instagram
+  regiao: 'São Paulo/SP',
   // Pendentes de confirmação pelo profissional:
   endereco: null, // ex.: 'Rua Exemplo, 123 — Bairro, Cidade/SP'
   mapaEmbedUrl: null, // URL de incorporação do Google Maps
