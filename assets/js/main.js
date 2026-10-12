@@ -88,10 +88,18 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
 /* Botão flutuante: oculto enquanto o CTA principal do hero está visível, para não sobrepô-lo */
 const waFloat = document.querySelector('.wa-float');
 const heroActions = document.querySelector('.hero-actions');
+const heroSection = document.getElementById('inicio');
 if (waFloat && heroActions && 'IntersectionObserver' in window) {
-  new IntersectionObserver(([entry]) => {
-    waFloat.classList.toggle('is-hidden', entry.isIntersecting);
-  }).observe(heroActions);
+  // No celular o botão flutuante cobriria o título: fica oculto enquanto o topo está na tela
+  const smallScreen = window.matchMedia('(max-width: 600px)');
+  const target = () => (smallScreen.matches ? heroSection : heroActions);
+  let observed = null;
+  const io = new IntersectionObserver(([entry]) => {
+    waFloat.classList.toggle('is-hidden', entry.isIntersecting && entry.intersectionRatio > (smallScreen.matches ? 0.15 : 0));
+  }, { threshold: [0, 0.15, 0.5] });
+  const watch = () => { if (observed) io.unobserve(observed); observed = target(); io.observe(observed); };
+  watch();
+  smallScreen.addEventListener('change', watch);
 }
 
 /* Galeria: lightbox acessível com <dialog> */

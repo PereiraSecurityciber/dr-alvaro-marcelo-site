@@ -583,3 +583,77 @@ h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 400; max-width: 16ch;
 .lightbox img { border-radius: var(--photo-radius); }
 .g-item figcaption { border-radius: 0 0 var(--photo-radius) var(--photo-radius); }
 @media (max-width: 600px) { :root { --photo-radius: 16px; } }
+
+/* ---------- WhatsApp neon ---------- */
+@keyframes wa-neon {
+  0%, 100% { box-shadow: 0 0 6px rgba(37,211,102,.9), 0 0 16px rgba(37,211,102,.7), 0 0 34px rgba(37,211,102,.45), 0 0 60px rgba(37,211,102,.25); }
+  50%      { box-shadow: 0 0 8px rgba(37,211,102,1), 0 0 24px rgba(37,211,102,.85), 0 0 50px rgba(37,211,102,.6), 0 0 90px rgba(37,211,102,.35); }
+}
+.btn-wa, .wa-float {
+  background: #25D366;
+  color: #04150a;
+  border: 1px solid rgba(190,255,215,.9);
+  text-shadow: 0 0 1px rgba(255,255,255,.4);
+  animation: wa-neon 2.4s ease-in-out infinite;
+}
+.wa-float { color: #fff; }
+.btn-wa:hover, .wa-float:hover {
+  background: #39f07f;
+  box-shadow: 0 0 10px #25D366, 0 0 30px rgba(37,211,102,.9), 0 0 70px rgba(37,211,102,.6), 0 0 110px rgba(37,211,102,.4);
+  animation-play-state: paused;
+}
+.wa-float::before { border-color: rgba(37,211,102,.8); box-shadow: 0 0 18px rgba(37,211,102,.6); }
+.link-wa .wa-icon { filter: drop-shadow(0 0 4px rgba(37,211,102,.8)); }
+.section-light .btn-wa { box-shadow: 0 0 10px rgba(37,211,102,.6), 0 0 26px rgba(37,211,102,.35); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-wa, .wa-float { animation: none; box-shadow: 0 0 8px rgba(37,211,102,.9), 0 0 26px rgba(37,211,102,.6); }
+}
+
+/* ---------- Responsividade fina ---------- */
+.ig-embed-placeholder a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; }
+
+/* Celulares pequenos */
+@media (max-width: 420px) {
+  .hero-facts { flex-direction: column; gap: 12px; padding-top: 1.2rem; }
+  .hero-facts li, .hero-facts li + li { flex-direction: row; align-items: baseline; gap: 10px; padding: 0; border-left: 0; min-width: 0; }
+  .hero-facts strong { font-size: 1.15rem; }
+  .hero-facts span { font-size: .8rem; }
+  .hero-actions { gap: 18px; }
+  .btn-wa { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 360px) {
+  .brand img { width: 28px; }
+  .brand-name { font-size: .92rem; letter-spacing: .05em; white-space: nowrap; }
+  .hero h1 { font-size: 2.2rem; }
+  .btn { font-size: .86rem; }
+  .g-filter { padding: 10px 14px; font-size: .85rem; }
+}
+
+/* Celular deitado: texto e retrato lado a lado, retrato menor */
+@media (max-width: 960px) and (orientation: landscape) and (max-height: 520px) {
+  .hero { min-height: auto; padding: calc(var(--header-h) + 20px) 0 48px; }
+  .hero-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 28px; }
+  .hero-visual { order: 0; max-width: 260px; margin: 0; aspect-ratio: 4 / 5; }
+  .portrait { inset: 0; }
+  .hero h1 { font-size: 2.3rem; }
+  .hero h1 br { display: none; }
+  .hero-facts { display: none; }
+  .scroll-cue { display: none; }
+}
+
+/* Tablet em pé: retrato um pouco menor para o título aparecer na primeira tela */
+@media (min-width: 601px) and (max-width: 960px) and (orientation: portrait) {
+  .hero-visual { max-width: 340px; }
+}
+
+/* Monitores grandes */
+@media (min-width: 1800px) {
+  html { font-size: 18px; }
+  .container { max-width: 1480px; }
+  .hero-visual { max-width: 600px; }
+}
+@media (min-width: 2400px) {
+  html { font-size: 20px; }
+  .container { max-width: 1720px; }
+  .hero-visual { max-width: 700px; }
+}
