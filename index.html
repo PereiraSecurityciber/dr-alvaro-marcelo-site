@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Álvaro Marcelo | Odontologia Estética — CRO-SP 139591</title>
+  <meta name="description" content="Dr. Álvaro Marcelo, cirurgião-dentista (CRO-SP 139591). Odontologia estética, laminados cerâmicos e harmonização orofacial com planejamento individualizado. Agende sua avaliação pelo WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="icon" type="image/png" href="assets/img/simbolo.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Dr. Álvaro Marcelo | Odontologia Estética">
+  <meta property="og:description" content="A arte da estética. A precisão dos detalhes. Agende sua avaliação pelo WhatsApp.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Dr. Álvaro Marcelo — início">
+        <img src="assets/img/simbolo.png" alt="" width="28" height="37">
+        <span class="brand-text">
+          <span class="brand-name">Dr. Álvaro Marcelo</span>
+          <span class="brand-sub">Odontologia estética · CRO-SP 139591</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav" id="menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#tratamentos">Tratamentos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn-outline btn-sm" data-wa href="https://wa.me/5511982417600" target="_blank" rel="noopener">Agendar avaliação</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Cirurgião-dentista · Odontologia estética</p>
+          <h1 id="hero-title" class="reveal">
+            A arte da estética.<br>
+            <em>A precisão dos detalhes.</em>
+          </h1>
+          <p class="hero-lead reveal">Odontologia estética com atenção aos detalhes, planejamento individualizado e cuidado em cada etapa do atendimento.</p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-wa" data-wa href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+              <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+              Agendar avaliação pelo WhatsApp
+            </a>
+            <a class="btn btn-ghost" href="#tratamentos">Conheça os tratamentos</a>
+          </div>
+          <ul class="hero-facts reveal" aria-label="Informações do atendimento">
+            <li><strong>7 anos</strong><span>de experiência</span></li>
+            <li><strong>Particular</strong><span>atendimento</span></li>
+            <li><strong>Sob agendamento</strong><span>personalizado</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="portrait reveal">
+            <img src="assets/img/dr-alvaro-retrato.webp" alt="Retrato do Dr. Álvaro Marcelo, de terno escuro, sorrindo" width="640" height="641" fetchpriority="high">
+          </figure>
+          <canvas class="tooth-canvas" id="tooth3d" aria-hidden="true"></canvas>
+          <span class="hero-ring" aria-hidden="true"></span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#tratamentos" aria-label="Rolar para tratamentos"><span></span></a>
+    </section>
+
+    <!-- TRATAMENTOS -->
+    <section class="section section-light" id="tratamentos" aria-labelledby="trat-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow eyebrow-dark reveal">Tratamentos</p>
+          <h2 id="trat-title" class="reveal">Estética planejada<br>com <em>precisão</em>.</h2>
+          <p class="section-lead reveal">Cada tratamento começa por uma avaliação. A indicação é definida individualmente, de acordo com as necessidades e as condições de cada paciente.</p>
+        </header>
+
+        <div class="treatments">
+          <article class="treatment tilt reveal">
+            <div class="treatment-media treatment-art">
+              <svg viewBox="0 0 200 160" aria-hidden="true">
+                <defs><linearGradient id="silver" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#F5F5F5"/><stop offset=".5" stop-color="#A8A8A8"/><stop offset="1" stop-color="#D9D9D9"/></linearGradient></defs>
+                <g fill="none" stroke="url(#silver)" stroke-width="1.4">
+                  <path d="M60 40c10-6 30-6 40 0v70c0 14-40 14-40 0z"/>
+                  <path d="M100 40c10-6 30-6 40 0v70c0 14-40 14-40 0z"/>
+                  <path d="M66 46c8-4 20-4 28 0v58c0 9-28 9-28 0z" opacity=".45"/>
+                  <path d="M106 46c8-4 20-4 28 0v58c0 9-28 9-28 0z" opacity=".45"/>
+                  <path d="M40 132h120" opacity=".35"/>
+                </g>
+              </svg>
+              <span class="treatment-index">01</span>
+            </div>
+            <div class="treatment-body">
+              <h3>Laminados cerâmicos</h3>
+              <p>Lâminas finas de cerâmica, confeccionadas sob medida e aplicadas sobre a face visível dos dentes. A indicação, o planejamento e o número de elementos são definidos após avaliação clínica.</p>
+              <a class="link-wa" data-wa data-wa-topic="Laminados cerâmicos" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                Solicitar informações <span class="sr-only">sobre laminados cerâmicos pelo WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="treatment tilt reveal">
+            <div class="treatment-media treatment-photo">
+              <img src="assets/img/dr-alvaro-atendimento.webp" alt="Dr. Álvaro Marcelo em atendimento, com equipamento de proteção" width="820" height="760" loading="lazy">
+              <span class="treatment-index">02</span>
+            </div>
+            <div class="treatment-body">
+              <h3>Odontologia estética</h3>
+              <p>Procedimentos voltados à harmonia do sorriso — forma, cor e proporção dos dentes — sempre com planejamento individual e orientação sobre cada etapa do tratamento.</p>
+              <a class="link-wa" data-wa data-wa-topic="Odontologia estética" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                Solicitar informações <span class="sr-only">sobre odontologia estética pelo WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="treatment tilt reveal">
+            <div class="treatment-media treatment-photo">
+              <img src="assets/img/caso-labios-1.webp" alt="Registro clínico de lábios em perfil, publicado com autorização do paciente" width="720" height="960" loading="lazy">
+              <span class="treatment-index">03</span>
+            </div>
+            <div class="treatment-body">
+              <h3>Harmonização orofacial</h3>
+              <p>Procedimentos que buscam o equilíbrio estético da face e do sorriso, realizados dentro dos limites da atuação do cirurgião-dentista. Os procedimentos indicados são definidos em avaliação.</p>
+              <a class="link-wa" data-wa data-wa-topic="Harmonização orofacial" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                Solicitar informações <span class="sr-only">sobre harmonização orofacial pelo WhatsApp</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section section-dark about" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <div class="about-frame">
+            <img src="assets/img/dr-alvaro-retrato.webp" alt="Dr. Álvaro Marcelo" width="640" height="641" loading="lazy">
+          </div>
+          <img class="about-mark" src="assets/img/simbolo.png" alt="" width="600" height="789" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow reveal">Sobre o profissional</p>
+          <h2 id="sobre-title" class="reveal">Dr. Álvaro <em>Marcelo</em></h2>
+          <p class="about-role reveal">Cirurgião-dentista · CRO-SP 139591</p>
+          <p class="reveal">Formado em Odontologia, o Dr. Álvaro Marcelo atua há sete anos com foco em odontologia estética. O atendimento é particular, com agendamento personalizado e planejamento pensado para cada paciente.</p>
+          <p class="reveal">A filosofia de trabalho parte de uma conversa: entender as expectativas, avaliar com cuidado e explicar com clareza o que é indicado — e o que não é — antes de qualquer procedimento.</p>
+          <dl class="about-data reveal">
+            <div><dt>Formação</dt><dd>Odontologia</dd></div>
+            <div><dt>Experiência</dt><dd>7 anos</dd></div>
+            <div><dt>Atuação</dt><dd>Odontologia estética</dd></div>
+            <div><dt>Atendimento</dt><dd>Particular · adultos</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="section section-light" id="diferenciais" aria-labelledby="dif-title">
+      <div class="container">
+        <header class="section-head section-head-split">
+          <div>
+            <p class="eyebrow eyebrow-dark reveal">Diferenciais</p>
+            <h2 id="dif-title" class="reveal">O cuidado está<br>nos <em>detalhes</em>.</h2>
+          </div>
+          <p class="section-lead reveal">Um atendimento organizado em torno de cada paciente, do primeiro contato ao acompanhamento.</p>
+        </header>
+        <ol class="features">
+          <li class="reveal"><span class="feature-num">I</span><h3>Atendimento particular</h3><p>Consultas reservadas, com tempo dedicado a cada paciente.</p></li>
+          <li class="reveal"><span class="feature-num">II</span><h3>Planejamento individualizado</h3><p>Cada indicação é definida a partir da avaliação clínica, sem protocolos genéricos.</p></li>
+          <li class="reveal"><span class="feature-num">III</span><h3>Agendamento personalizado</h3><p>Horários combinados mediante contato prévio, conforme a disponibilidade da agenda.</p></li>
+          <li class="reveal"><span class="feature-num">IV</span><h3>Atenção aos detalhes</h3><p>Forma, proporção e naturalidade observadas em cada etapa.</p></li>
+          <li class="reveal"><span class="feature-num">V</span><h3>Orientação profissional</h3><p>Explicações claras sobre o tratamento, cuidados e expectativas realistas.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CASOS -->
+    <section class="section section-dark cases" id="casos" aria-labelledby="casos-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Registros clínicos</p>
+          <h2 id="casos-title" class="reveal">Delicadeza em <em>cada traço</em>.</h2>
+        </header>
+        <div class="cases-grid">
+          <figure class="case tilt reveal"><img src="assets/img/caso-labios-2.webp" alt="Registro clínico de lábios em perfil" width="720" height="960" loading="lazy"></figure>
+          <figure class="case tilt reveal"><img src="assets/img/caso-labios-1.webp" alt="Registro clínico de lábios em perfil, com luz lateral" width="720" height="960" loading="lazy"></figure>
+          <figure class="case tilt reveal"><img src="assets/img/caso-labios-3.webp" alt="Registro clínico de lábios em ângulo inferior" width="720" height="960" loading="lazy"></figure>
+        </div>
+        <div class="testimonial" id="depoimento">
+          <div class="testimonial-video reveal">
+            <video controls playsinline preload="none" poster="assets/img/depoimento-poster.webp" aria-describedby="depoimento-desc">
+              <source src="assets/video/depoimento.mp4" type="video/mp4">
+              Seu navegador não reproduz vídeos. <a href="assets/video/depoimento.mp4">Baixe o vídeo do depoimento</a>.
+            </video>
+          </div>
+          <div class="testimonial-copy">
+            <p class="eyebrow reveal">Depoimento</p>
+            <h3 class="reveal">A experiência de quem <em>já passou</em> pelo atendimento.</h3>
+            <p id="depoimento-desc" class="reveal">Vídeo de paciente, publicado com autorização formal. Toque para reproduzir com som.</p>
+          </div>
+        </div>
+        <p class="disclaimer reveal">Imagens e vídeo publicados com autorização formal dos pacientes. Os resultados variam de pessoa para pessoa e dependem de avaliação clínica individual; as imagens não representam garantia de resultado.</p>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section section-light" id="agendamento" aria-labelledby="ag-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow eyebrow-dark reveal">Como funciona</p>
+          <h2 id="ag-title" class="reveal">Do primeiro contato<br>à <em>avaliação</em>.</h2>
+        </header>
+        <ol class="steps">
+          <li class="reveal"><span class="step-n">01</span><h3>Conheça</h3><p>Veja os tratamentos e a forma de atendimento aqui no site.</p></li>
+          <li class="reveal"><span class="step-n">02</span><h3>Clique</h3><p>Toque no botão do WhatsApp — a mensagem inicial já vem pronta.</p></li>
+          <li class="reveal"><span class="step-n">03</span><h3>Envie</h3><p>Envie a mensagem ao consultório e conte o que procura.</p></li>
+          <li class="reveal"><span class="step-n">04</span><h3>Agende</h3><p>O profissional ou a equipe informa a disponibilidade e orienta sobre a avaliação.</p></li>
+        </ol>
+        <p class="note reveal">O botão inicia uma conversa pelo WhatsApp. A consulta só é confirmada após o retorno do consultório.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-light faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <header class="section-head">
+          <p class="eyebrow eyebrow-dark reveal">Dúvidas frequentes</p>
+          <h2 id="faq-title" class="reveal">Perguntas<br><em>frequentes</em>.</h2>
+        </header>
+        <div class="faq" id="faq-list">
+          <details class="reveal">
+            <summary>Como agendar uma avaliação?</summary>
+            <p>Pelo WhatsApp: toque em qualquer botão “Agendar avaliação”, envie a mensagem e o consultório retornará com a disponibilidade.</p>
+          </details>
+          <details class="reveal">
+            <summary>Como funciona o atendimento?</summary>
+            <p>O atendimento é particular e com agendamento personalizado, mediante contato prévio. Tudo começa por uma avaliação, na qual o profissional entende suas expectativas e explica as indicações possíveis.</p>
+          </details>
+          <details class="reveal">
+            <summary>Quais tratamentos estão disponíveis?</summary>
+            <p>Laminados cerâmicos, odontologia estética e procedimentos de harmonização orofacial. A indicação de cada tratamento depende de avaliação clínica.</p>
+          </details>
+          <details class="reveal">
+            <summary>Quais são as formas de pagamento?</summary>
+            <p data-config="pagamento">Cartão de crédito, cartão de débito, Pix e dinheiro.</p>
+          </details>
+          <details class="reveal">
+            <summary>Como consultar os horários?</summary>
+            <p data-config="horarios">Os horários são informados pelo WhatsApp, de acordo com a disponibilidade da agenda.</p>
+          </details>
+          <details class="reveal">
+            <summary>Onde fica o consultório?</summary>
+            <p data-config="endereco">O endereço é informado no momento do agendamento, pelo WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section section-dark cta" id="contato" aria-labelledby="cta-title">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="container cta-inner">
+        <p class="eyebrow reveal">Contato</p>
+        <h2 id="cta-title" class="reveal">Seu próximo passo começa<br>com uma <em>conversa</em>.</h2>
+        <p class="section-lead reveal">Entre em contato para obter informações sobre os tratamentos e consultar a disponibilidade para uma avaliação.</p>
+        <div class="cta-actions reveal">
+          <a class="btn btn-wa btn-lg" data-wa href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+            <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+            Falar com o Dr. Álvaro pelo WhatsApp
+          </a>
+        </div>
+        <ul class="contact-list reveal">
+          <li><span>WhatsApp</span><a data-wa href="https://wa.me/5511982417600" target="_blank" rel="noopener">+55 11 98241-7600</a></li>
+          <li><span>Instagram</span><a href="https://www.instagram.com/dr.alvaromarcelopr/" target="_blank" rel="noopener">@dr.alvaromarcelopr</a></li>
+          <li data-config="endereco-item" hidden><span>Endereço</span><address></address></li>
+          <li><span>Pagamento</span><p>Crédito · Débito · Pix · Dinheiro</p></li>
+        </ul>
+        <div class="map" data-config="mapa" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/simbolo.png" alt="" width="40" height="53" loading="lazy">
+        <div>
+          <p class="footer-name">Dr. Álvaro Marcelo</p>
+          <p>Cirurgião-dentista · CRO-SP 139591</p>
+        </div>
+      </div>
+      <nav aria-label="Rodapé">
+        <ul class="footer-nav">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#tratamentos">Tratamentos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <ul class="footer-contact">
+        <li><a data-wa href="https://wa.me/5511982417600" target="_blank" rel="noopener">WhatsApp +55 11 98241-7600</a></li>
+        <li><a href="https://www.instagram.com/dr.alvaromarcelopr/" target="_blank" rel="noopener">Instagram @dr.alvaromarcelopr</a></li>
+      </ul>
+    </div>
+    <div class="container footer-legal">
+      <p>Privacidade: este site não possui formulários, não coleta dados pessoais e não utiliza cookies de rastreamento. O contato acontece diretamente pelo WhatsApp, sujeito à política de privacidade do aplicativo.</p>
+      <p>Responsável técnico: Dr. Álvaro Marcelo — CRO-SP 139591. Conteúdo informativo; não substitui avaliação clínica. © <span id="ano">2026</span></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa href="https://wa.me/5511982417600" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp com o Dr. Álvaro Marcelo">
+    <svg aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+  </a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.67-1.74A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3Zm0 23.8c-2 0-3.95-.54-5.65-1.55l-.4-.24-3.96 1.03 1.06-3.86-.26-.4A10.76 10.76 0 0 1 5.2 16c0-5.97 4.86-10.82 10.84-10.82 5.96 0 10.8 4.85 10.8 10.82 0 5.96-4.84 10.8-10.8 10.8Zm5.93-8.1c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.74.17-.21.32-.84 1.05-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.37c.16.22 2.3 3.5 5.56 4.91.78.34 1.38.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38Z"/></symbol>
+  </svg>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
