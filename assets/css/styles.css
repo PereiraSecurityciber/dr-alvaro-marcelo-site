@@ -157,12 +157,6 @@ p { margin: 0 0 1rem; }
 }
 .hero-ring::before { content: ''; position: absolute; top: 50%; left: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--silver-light); box-shadow: 0 0 14px rgba(255,255,255,.6); }
 @keyframes ring-spin { to { transform: rotate(360deg); } }
-.sculpture-canvas {
-  position: absolute; z-index: 3; left: -26%; bottom: -8%;
-  width: 72%; aspect-ratio: 1; height: auto; pointer-events: none;
-  opacity: 0; transition: opacity 1.4s var(--ease);
-}
-.sculpture-canvas.is-ready { opacity: 1; }
 
 .scroll-cue { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); width: 24px; height: 40px; border: 1px solid var(--line-dark); border-radius: 14px; }
 .scroll-cue span { position: absolute; left: 50%; top: 8px; width: 2px; height: 8px; margin-left: -1px; background: var(--silver); border-radius: 2px; animation: cue 2.2s var(--ease) infinite; }
@@ -360,7 +354,6 @@ p { margin: 0 0 1rem; }
   .testimonial-video { max-width: 340px; width: 100%; margin: 0 auto; }
   .hero-visual { justify-self: center; max-width: 400px; order: -1; margin-bottom: 8px; aspect-ratio: 1 / 1.05; }
   .portrait { inset: 0 6% 0 22%; }
-  .sculpture-canvas { left: -12%; bottom: -6%; width: 64%; }
   .scroll-cue { display: none; }
 
   .treatments { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }

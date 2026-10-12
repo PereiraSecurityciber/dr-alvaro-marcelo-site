@@ -84,13 +84,6 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
 }
 
 
-/* Escultura 3D no hero */
-const canvas = document.getElementById('sculpture3d');
-if (canvas) {
-  import('./sculpture3d.js')
-    .then(({ initSculpture }) => initSculpture(canvas, { reduceMotion }))
-    .catch(() => canvas.remove());
-}
 
 /* Botão flutuante: oculto enquanto o CTA principal do hero está visível, para não sobrepô-lo */
 const waFloat = document.querySelector('.wa-float');
