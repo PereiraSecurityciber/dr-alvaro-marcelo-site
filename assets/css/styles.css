@@ -521,3 +521,21 @@ h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 400; max-width: 16ch;
 .g-filter[aria-pressed="true"] { background: var(--ice); color: var(--black); border-color: var(--ice); }
 .g-item[hidden] { display: none; }
 .testimonial-proc { display: inline-block; font-size: .85rem; color: var(--black) !important; background: var(--silver-light); padding: 4px 12px; border-radius: 999px; margin-bottom: 1rem; }
+
+/* Instagram sem mosaico: bloco único centralizado à esquerda */
+.insta-grid { grid-template-columns: minmax(0, 1fr); }
+.about-frame img { object-position: 50% 25%; }
+
+/* Vídeos do Instagram */
+.ig-videos { margin-top: clamp(40px, 5vw, 64px); }
+.ig-videos h3 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 400; color: var(--white); margin-bottom: 1.4rem; }
+.ig-embeds { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 24px; }
+.ig-embed { min-height: 480px; display: flex; justify-content: center; }
+.ig-embed .instagram-media { margin: 0 !important; min-width: 0 !important; width: 100% !important; }
+.ig-embed-placeholder { width: 100%; min-height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; padding: 32px; border: 1px solid var(--line-dark); border-radius: var(--radius); background: radial-gradient(circle at 50% 35%, #2a2a2a, var(--graphite-2) 70%); }
+.ig-embed-proc { font-size: .85rem; color: var(--black); background: var(--silver-light); padding: 4px 12px; border-radius: 999px; }
+.ig-embed-load { display: inline-flex; align-items: center; gap: 10px; font: 600 .95rem/1 var(--sans); color: var(--black); background: var(--ice); border: 0; border-radius: 999px; padding: 14px 24px; min-height: 48px; cursor: pointer; transition: transform .3s var(--ease); }
+.ig-embed-load:hover { transform: scale(1.04); }
+.ig-embed-load svg { width: 18px; height: 18px; }
+.ig-embed-placeholder p { font-size: .85rem; color: var(--muted); max-width: 26rem; margin: 0; }
+.ig-embed-placeholder a { font-size: .9rem; color: var(--silver-light); }

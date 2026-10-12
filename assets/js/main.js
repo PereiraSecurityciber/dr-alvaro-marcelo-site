@@ -139,3 +139,35 @@ if (lightbox && galleryItems.length && typeof lightbox.showModal === 'function')
   });
   lightbox.addEventListener('close', () => opener?.focus());
 }
+
+/* Vídeos do Instagram: incorporação oficial, carregada só após o clique */
+let igScript = null;
+const loadInstagram = () => {
+  if (!igScript) {
+    igScript = new Promise((resolve, reject) => {
+      const el = document.createElement('script');
+      el.src = 'https://www.instagram.com/embed.js';
+      el.async = true;
+      el.onload = resolve;
+      el.onerror = reject;
+      document.body.append(el);
+    });
+  }
+  return igScript;
+};
+document.querySelectorAll('.ig-embed').forEach((box) => {
+  box.querySelector('.ig-embed-load').addEventListener('click', () => {
+    const quote = document.createElement('blockquote');
+    quote.className = 'instagram-media';
+    quote.dataset.instgrmPermalink = box.dataset.permalink;
+    quote.dataset.instgrmVersion = '14';
+    const link = document.createElement('a');
+    link.href = box.dataset.permalink;
+    link.textContent = 'Ver no Instagram';
+    quote.append(link);
+    box.replaceChildren(quote);
+    loadInstagram()
+      .then(() => window.instgrm?.Embeds.process())
+      .catch(() => { link.target = '_blank'; link.rel = 'noopener'; });
+  });
+});
