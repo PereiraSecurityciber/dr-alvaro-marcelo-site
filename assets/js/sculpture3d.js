@@ -34,15 +34,14 @@ export function initSculpture(canvas, { reduceMotion = false } = {}) {
   const blob = new THREE.Mesh(
     geo,
     new THREE.MeshPhysicalMaterial({
-      color: 0xffffff,
+      color: 0xdedede,
       metalness: 1,
-      roughness: 0.2,
+      roughness: 0.12,
       clearcoat: 0.8,
       clearcoatRoughness: 0.08,
-      envMapIntensity: 1.9,
+      envMapIntensity: 1.2,
     }),
   );
-  blob.scale.set(0.92, 1.12, 0.92);
   group.add(blob);
 
   const ring = new THREE.Mesh(
@@ -81,8 +80,9 @@ export function initSculpture(canvas, { reduceMotion = false } = {}) {
       v.set(base[i * 3], base[i * 3 + 1], base[i * 3 + 2]);
       const n = v.clone().normalize();
       const d =
-        0.09 * Math.sin(n.x * 1.8 + t * 0.6) * Math.cos(n.y * 1.6 + t * 0.5) +
-        0.04 * Math.sin(n.z * 2.6 + n.y * 1.2 + t * 0.8);
+        0.16 * Math.sin(n.x * 2.4 + t * 0.9) * Math.cos(n.y * 2.1 + t * 0.7) +
+        0.09 * Math.sin(n.z * 3.6 + n.y * 1.4 + t * 1.1) +
+        0.05 * Math.sin((n.x + n.z) * 5.2 - t * 1.3);
       v.addScaledVector(n, d);
       pos.setXYZ(i, v.x, v.y, v.z);
     }

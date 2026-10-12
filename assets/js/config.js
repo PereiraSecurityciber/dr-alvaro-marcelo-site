@@ -9,14 +9,14 @@ export const SITE = {
     numero: '5511982417600',
     exibicao: '+55 11 98241-7600',
     mensagem:
-      'Olá, Dr. Álvaro Marcelo! Conheci seu trabalho pelo site e gostaria de obter informações sobre uma avaliação de estética facial e os horários disponíveis.',
+      'Olá, Dr. Álvaro Marcelo! Conheci seu trabalho pelo site e gostaria de obter informações sobre uma avaliação odontológica e os horários disponíveis.',
   },
   instagram: {
     usuario: 'dr.alvaromarcelopr',
     url: 'https://www.instagram.com/dr.alvaromarcelopr/',
   },
   pagamento: ['crédito', 'débito', 'Pix', 'dinheiro'],
-  regiao: 'Tatuapé, São Paulo/SP', // conforme bio do Instagram
+  regiao: 'Tatuapé · São Paulo/SP', // conforme bio do Instagram
   // Pendentes de confirmação pelo profissional:
   endereco: null, // ex.: 'Rua Exemplo, 123 — Bairro, Cidade/SP'
   mapaEmbedUrl: null, // URL de incorporação do Google Maps
