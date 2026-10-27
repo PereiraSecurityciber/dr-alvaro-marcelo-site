@@ -63,7 +63,7 @@
       <nav class="nav" id="menu" aria-label="Navegação principal">
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#tratamentos">Tratamentos</a></li>
+          <li><a href="#procedimentos">Procedimentos</a></li>
           <li><a href="#casos">Galeria</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -89,12 +89,12 @@
               <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
               Agendar avaliação pelo WhatsApp
             </a>
-            <a class="btn btn-ghost" href="#tratamentos">Conheça os tratamentos</a>
+            <a class="btn btn-ghost" href="#procedimentos">Conheça os procedimentos</a>
           </div>
           <ul class="hero-facts reveal" aria-label="Informações do atendimento">
             <li><strong>7 anos</strong><span>de experiência</span></li>
             <li><strong>+1.000</strong><span>casos realizados</span></li>
-            <li><strong>Planejamento</strong><span>individualizado</span></li>
+            <li class="fact-wide"><strong>Cirurgias estéticas da face</strong><span>Harmonização Orofacial</span></li>
           </ul>
         </div>
 
@@ -105,123 +105,185 @@
           <span class="hero-ring" aria-hidden="true"></span>
         </div>
       </div>
-      <a class="scroll-cue" href="#tratamentos" aria-label="Rolar para tratamentos"><span></span></a>
+      <a class="scroll-cue" href="#procedimentos" aria-label="Rolar para procedimentos"><span></span></a>
     </section>
 
-    <!-- TRATAMENTOS -->
-    <section class="section section-light" id="tratamentos" aria-labelledby="trat-title">
+    <!-- PROCEDIMENTOS -->
+    <section class="section section-light" id="procedimentos" aria-labelledby="proc-title">
       <div class="container">
         <header class="section-head">
-          <h2 id="trat-title">Estética planejada<br>com precisão.</h2>
-          <p class="section-lead">Cada tratamento começa por uma avaliação. A indicação é definida individualmente, de acordo com as necessidades e as condições de cada paciente.</p>
+          <h2 id="proc-title">Procedimentos.</h2>
+          <p class="section-lead">Toque em um procedimento para ver uma breve explicação. A indicação é sempre definida em avaliação, de acordo com as necessidades e as condições de cada paciente.</p>
         </header>
 
-        <div class="treatments">
-          <article class="treatment">
-            <div class="treatment-media treatment-photo">
-              <img src="assets/img/galeria/rino-2.webp" alt="Rinomodelação: perfil antes e depois, publicado com autorização da paciente" width="675" height="1200" loading="lazy">
-            </div>
-            <div class="treatment-body">
-              <h3>Rinomodelação</h3>
-              <p>Procedimento não cirúrgico que busca melhorar o contorno do nariz e o equilíbrio do perfil, sem cortes. A avaliação define se o procedimento é indicado e o que é possível esperar em cada caso.</p>
-              <a class="link-wa" data-wa data-wa-topic="Rinomodelação" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
-                <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
-                Solicitar informações <span class="sr-only">sobre rinomodelação pelo WhatsApp</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="treatment">
-            <div class="treatment-media treatment-photo">
-              <img src="assets/img/caso-labios-1.webp" alt="Lábios: registro em perfil, publicado com autorização da paciente" width="720" height="960" loading="lazy">
-            </div>
-            <div class="treatment-body">
-              <h3>Lábios</h3>
-              <p>Contorno, volume e proporção dos lábios avaliados em relação ao restante do rosto. A técnica e a quantidade são definidas individualmente, com foco em um resultado natural.</p>
-              <a class="link-wa" data-wa data-wa-topic="Lábios" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
-                <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
-                Solicitar informações <span class="sr-only">sobre lábios pelo WhatsApp</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="treatment">
-            <div class="treatment-media treatment-photo">
-              <img src="assets/img/galeria/papada-2.webp" alt="Lipo de papada: perfil de paciente, publicado com autorização" width="800" height="1200" loading="lazy">
-            </div>
-            <div class="treatment-body">
-              <h3>Lipo de papada</h3>
-              <p>Redução da gordura localizada sob o queixo, para um contorno mais definido entre o rosto e o pescoço. A técnica e o número de sessões são definidos após a avaliação.</p>
-              <a class="link-wa" data-wa data-wa-topic="Lipo de papada" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
-                <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
-                Solicitar informações <span class="sr-only">sobre lipo de papada pelo WhatsApp</span>
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <div class="guide">
+        <div class="proc-groups">
+        <div class="proc-group">
           <header class="guide-head">
-            <h3>Entenda cada etapa antes de decidir.</h3>
-            <p>Informações gerais para ajudar na sua conversa com o profissional. Elas não substituem a avaliação clínica, que define o que é indicado no seu caso.</p>
+            <h3 id="proc-g1">Harmonização facial</h3>
+            <p>Procedimentos minimamente invasivos, sem cortes, para equilíbrio e naturalidade do rosto.</p>
           </header>
-          <div class="faq guide-list">
-            <details open>
-              <summary>Harmonização orofacial</summary>
-              <div class="guide-body">
-                <div><h4>O que é</h4><p>Conjunto de procedimentos que buscam o equilíbrio estético e funcional da face, realizados dentro dos limites legais de atuação do cirurgião-dentista.</p></div>
-                <div><h4>Como funciona</h4><p>A avaliação analisa proporções faciais, queixas e expectativas. Os procedimentos, produtos e quantidades são definidos individualmente, com explicação sobre riscos, cuidados e tempo de recuperação.</p></div>
-                <div><h4>Expectativas</h4><p>A proposta é valorizar características próprias com naturalidade. Resultados variam de pessoa para pessoa e não podem ser garantidos.</p></div>
+          <div class="faq proc-list" aria-labelledby="proc-g1">
+            <details>
+              <summary>Preenchimento facial</summary>
+              <div class="proc-body">
+                <p>Aplicação de ácido hialurônico para repor volume, contornar regiões como malar, mandíbula, queixo e lábios, e suavizar sulcos. O efeito é imediato e temporário; os pontos e a quantidade são definidos na avaliação.</p>
+                <a class="link-wa" data-wa data-wa-topic="Preenchimento facial" aria-label="Quero saber se preenchimento facial é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Botox<sup class="reg">®</sup></summary>
+              <div class="proc-body">
+                <p>Aplicação de toxina botulínica para suavizar linhas de expressão da testa, entre as sobrancelhas e ao redor dos olhos, relaxando temporariamente a musculatura. O efeito aparece em alguns dias e dura alguns meses.</p>
+                <a class="link-wa" data-wa data-wa-topic="Botox" aria-label="Quero saber se botox é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Bioestimulador de colágeno</summary>
+              <div class="proc-body">
+                <p>Substâncias que estimulam o próprio organismo a produzir colágeno, melhorando gradualmente a firmeza e a qualidade da pele. A melhora é progressiva e pode exigir mais de uma sessão.</p>
+                <a class="link-wa" data-wa data-wa-topic="Bioestimulador de colágeno" aria-label="Quero saber se bioestimulador de colágeno é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Fios de PDO</summary>
+              <div class="proc-body">
+                <p>Fios absorvíveis de polidioxanona inseridos sob a pele para dar sustentação e estimular colágeno. Com o tempo, os fios são absorvidos naturalmente pelo organismo.</p>
+                <a class="link-wa" data-wa data-wa-topic="Fios de PDO" aria-label="Quero saber se fios de pdo é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="proc-group">
+          <header class="guide-head">
+            <h3 id="proc-g2">Cirurgias estéticas</h3>
+            <p>Procedimentos cirúrgicos da face, indicados após avaliação detalhada do caso.</p>
+          </header>
+          <div class="faq proc-list" aria-labelledby="proc-g2">
+            <details>
+              <summary>Mini Lift facial</summary>
+              <div class="proc-body">
+                <p>Cirurgia que reposiciona os tecidos da face com incisões menores que as do lifting tradicional, indicada para flacidez leve a moderada, principalmente no terço inferior do rosto.</p>
+                <a class="link-wa" data-wa data-wa-topic="Mini Lift facial" aria-label="Quero saber se mini lift facial é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Cirurgia de Castanhares</summary>
+              <div class="proc-body">
+                <p>Elevação da cauda das sobrancelhas por pequenas incisões, para reposicionar a sobrancelha e deixar o olhar mais aberto.</p>
+                <a class="link-wa" data-wa data-wa-topic="Cirurgia de Castanhares" aria-label="Quero saber se cirurgia de castanhares é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Blefaroplastia</summary>
+              <div class="proc-body">
+                <p>Cirurgia das pálpebras que remove excesso de pele e, quando indicado, bolsas de gordura, nas pálpebras superiores, inferiores ou em ambas.</p>
+                <a class="link-wa" data-wa data-wa-topic="Blefaroplastia" aria-label="Quero saber se blefaroplastia é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Otomodelação/Otoplastia</summary>
+              <div class="proc-body">
+                <p>Correção do formato e da projeção das orelhas. A otomodelação é feita sem cortes, com preenchimento; a otoplastia é o procedimento cirúrgico.</p>
+                <a class="link-wa" data-wa data-wa-topic="Otomodelação/Otoplastia" aria-label="Quero saber se otomodelação/otoplastia é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
               </div>
             </details>
             <details>
               <summary>Rinomodelação</summary>
-              <div class="guide-body">
-                <div><h4>O que é</h4><p>Procedimento estético não cirúrgico para o contorno do nariz, realizado dentro da área de atuação da harmonização orofacial.</p></div>
-                <div><h4>Avaliação</h4><p>O profissional analisa o perfil, a proporção do nariz com o restante do rosto e o histórico do paciente para indicar — ou não — o procedimento.</p></div>
-                <div><h4>Após o procedimento</h4><p>Pode haver inchaço ou pequenos hematomas temporários. As orientações de cuidado são passadas individualmente.</p></div>
+              <div class="proc-body">
+                <p>Cirurgia minimamente invasiva e de rápida recuperação, que busca melhorar o contorno do nariz e o equilíbrio do perfil. A avaliação define se é indicada e o que é possível esperar em cada caso.</p>
+                <a class="link-wa" data-wa data-wa-topic="Rinomodelação" aria-label="Quero saber se rinomodelação é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
               </div>
             </details>
             <details>
-              <summary>Lábios</summary>
-              <div class="guide-body">
-                <div><h4>Avaliação</h4><p>São observados formato, simetria, hidratação e a relação dos lábios com o nariz e o queixo antes de propor qualquer procedimento.</p></div>
-                <div><h4>Naturalidade</h4><p>O objetivo é harmonia com o rosto, não volume em excesso. Quando necessário, o planejamento pode ser feito em etapas.</p></div>
-                <div><h4>Após o procedimento</h4><p>Inchaço temporário é comum nos primeiros dias. Siga as orientações recebidas no atendimento.</p></div>
+              <summary>Liplift</summary>
+              <div class="proc-body">
+                <p>Remoção de uma pequena faixa de pele entre o nariz e o lábio superior, encurtando essa distância e valorizando o contorno do lábio.</p>
+                <a class="link-wa" data-wa data-wa-topic="Liplift" aria-label="Quero saber se liplift é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
               </div>
             </details>
             <details>
               <summary>Lipo de papada</summary>
-              <div class="guide-body">
-                <div><h4>O que é</h4><p>Procedimento para reduzir a gordura localizada na região abaixo do queixo, valorizando o contorno do rosto.</p></div>
-                <div><h4>Avaliação</h4><p>Nem todo volume na região é gordura. A avaliação identifica a causa e define a técnica adequada, ou se o procedimento não é indicado.</p></div>
-                <div><h4>Recuperação</h4><p>O tempo de recuperação e os cuidados variam conforme a técnica e são explicados antes do procedimento.</p></div>
+              <div class="proc-body">
+                <p>Redução da gordura localizada sob o queixo, para um contorno mais definido entre o rosto e o pescoço. A técnica é definida após a avaliação.</p>
+                <a class="link-wa" data-wa data-wa-topic="Lipo de papada" aria-label="Quero saber se lipo de papada é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Bichectomia</summary>
+              <div class="proc-body">
+                <p>Remoção parcial das bolsas de gordura de Bichat, localizadas nas bochechas, para afinar o contorno do rosto.</p>
+                <a class="link-wa" data-wa data-wa-topic="Bichectomia" aria-label="Quero saber se bichectomia é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
+              </div>
+            </details>
+            <details>
+              <summary>Platismoplastia</summary>
+              <div class="proc-body">
+                <p>Cirurgia que trata as bandas do músculo platisma, no pescoço, melhorando a definição do contorno cervical.</p>
+                <a class="link-wa" data-wa data-wa-topic="Platismoplastia" aria-label="Quero saber se platismoplastia é indicado para mim, pelo WhatsApp" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+                  <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+                  Quero saber se é indicado para mim
+                </a>
               </div>
             </details>
           </div>
         </div>
-      </div>
-    </section>
-
-
-    <!-- DIFERENCIAIS -->
-    <section class="section section-light" id="diferenciais" aria-labelledby="dif-title">
-      <div class="container">
-        <header class="section-head section-head-split">
-          <div>
-            <h2 id="dif-title">O cuidado está<br>nos detalhes.</h2>
+        </div>
+        <aside class="proc-cta" aria-labelledby="proc-cta-title">
+          <div class="proc-cta-copy">
+            <p class="proc-cta-kicker">Avaliação personalizada</p>
+            <h3 id="proc-cta-title">Não sabe qual procedimento é o ideal para você?</h3>
+            <p>Conte pelo WhatsApp o que você gostaria de melhorar no seu rosto. O Dr. Álvaro analisa o seu caso e indica o caminho mais adequado, com explicação clara de cada etapa.</p>
+            <ul class="proc-cta-list">
+              <li>Atendimento particular e reservado</li>
+              <li>Planejamento individualizado</li>
+              <li>Orientação sobre riscos, cuidados e recuperação</li>
+            </ul>
           </div>
-          <p class="section-lead">Um atendimento organizado em torno de cada paciente, do primeiro contato ao acompanhamento.</p>
-        </header>
-        <ol class="features">
-          <li><h3>Atendimento particular</h3><p>Consultas reservadas, com tempo dedicado a cada paciente.</p></li>
-          <li><h3>Planejamento individualizado</h3><p>Cada indicação é definida a partir da avaliação clínica, sem protocolos genéricos.</p></li>
-          <li><h3>Agendamento personalizado</h3><p>Horários combinados mediante contato prévio, conforme a disponibilidade da agenda.</p></li>
-          <li><h3>Atenção aos detalhes</h3><p>Forma, proporção e naturalidade observadas em cada etapa.</p></li>
-          <li><h3>Orientação profissional</h3><p>Explicações claras sobre o tratamento, cuidados e expectativas realistas.</p></li>
-        </ol>
+          <a class="btn btn-wa btn-lg" data-wa data-wa-topic="uma avaliação para descobrir o procedimento ideal para mim" href="https://wa.me/5511982417600" target="_blank" rel="noopener">
+            <svg class="wa-icon" aria-hidden="true" viewBox="0 0 32 32"><use href="#i-wa"/></svg>
+            Quero minha avaliação
+          </a>
+        </aside>
+        <p class="note">As informações acima são gerais e não substituem a avaliação clínica. Resultados variam de pessoa para pessoa e não podem ser garantidos.</p>
       </div>
     </section>
+
 
     <!-- CASOS -->
     <section class="section section-dark cases" id="casos" aria-labelledby="casos-title">
@@ -236,7 +298,8 @@
           <button type="button" class="g-filter" data-filter="labios" aria-pressed="false">Lábios</button>
           <button type="button" class="g-filter" data-filter="papada" aria-pressed="false">Lipo de papada</button>
         </div>
-        <div class="gallery">
+        <div class="carousel" role="region" aria-roledescription="carrossel" aria-label="Galeria de fotos">
+        <div class="gallery" tabindex="0">
           <figure class="g-item" data-proc="rino"><button type="button" class="g-open" aria-label="Ampliar foto: Rinomodelação: perfil antes e depois, com a foto de comparação em preto e branco"><img src="assets/img/galeria/rino-1.webp" alt="Rinomodelação: perfil antes e depois, com a foto de comparação em preto e branco" width="675" height="1200" loading="lazy"></button><figcaption>Rinomodelação</figcaption></figure>
           <figure class="g-item" data-proc="labios"><button type="button" class="g-open" aria-label="Ampliar foto: Lábios: registro em perfil"><img src="assets/img/caso-labios-2.webp" alt="Lábios: registro em perfil" width="720" height="960" loading="lazy"></button><figcaption>Lábios</figcaption></figure>
           <figure class="g-item" data-proc="rino"><button type="button" class="g-open" aria-label="Ampliar foto: Rinomodelação: vista inferior do nariz, antes e depois"><img src="assets/img/galeria/rino-3.webp" alt="Rinomodelação: vista inferior do nariz, antes e depois" width="675" height="1200" loading="lazy"></button><figcaption>Rinomodelação</figcaption></figure>
@@ -244,11 +307,19 @@
           <figure class="g-item" data-proc="papada"><button type="button" class="g-open" aria-label="Ampliar foto: Lipo de papada: contorno do queixo e pescoço em perfil"><img src="assets/img/galeria/papada-1.webp" alt="Lipo de papada: contorno do queixo e pescoço em perfil" width="900" height="1200" loading="lazy"></button><figcaption>Lipo de papada</figcaption></figure>
           <figure class="g-item" data-proc="labios"><button type="button" class="g-open" aria-label="Ampliar foto: Lábios: registro em perfil"><img src="assets/img/galeria/labios-6.webp" alt="Lábios: registro em perfil" width="900" height="1200" loading="lazy"></button><figcaption>Lábios</figcaption></figure>
           <figure class="g-item" data-proc="rino"><button type="button" class="g-open" aria-label="Ampliar foto: Rinomodelação: perfil masculino antes e depois"><img src="assets/img/galeria/rino-4.webp" alt="Rinomodelação: perfil masculino antes e depois" width="675" height="1200" loading="lazy"></button><figcaption>Rinomodelação</figcaption></figure>
-          <figure class="g-item" data-proc="rino"><button type="button" class="g-open" aria-label="Ampliar foto: Rinomodelação: perfil logo após o procedimento"><img src="assets/img/galeria/perfil-1.webp" alt="Rinomodelação: perfil logo após o procedimento" width="900" height="1200" loading="lazy"></button><figcaption>Rinomodelação</figcaption></figure>
           <figure class="g-item" data-proc="rino"><button type="button" class="g-open" aria-label="Ampliar foto: Rinomodelação: perfil com luz lateral"><img src="assets/img/galeria/rino-5.webp" alt="Rinomodelação: perfil com luz lateral" width="900" height="1200" loading="lazy"></button><figcaption>Rinomodelação</figcaption></figure>
           <figure class="g-item" data-proc="rino"><button type="button" class="g-open" aria-label="Ampliar foto: Rinomodelação: perfil com luz lateral"><img src="assets/img/galeria/rino-6.webp" alt="Rinomodelação: perfil com luz lateral" width="853" height="1200" loading="lazy"></button><figcaption>Rinomodelação</figcaption></figure>
           <figure class="g-item" data-proc="labios"><button type="button" class="g-open" aria-label="Ampliar foto: Lábios: registro em ângulo lateral"><img src="assets/img/galeria/labios-7.webp" alt="Lábios: registro em ângulo lateral" width="900" height="1200" loading="lazy"></button><figcaption>Lábios</figcaption></figure>
           <figure class="g-item" data-proc="labios"><button type="button" class="g-open" aria-label="Ampliar foto: Lábios: registro em ângulo inferior"><img src="assets/img/caso-labios-3.webp" alt="Lábios: registro em ângulo inferior" width="720" height="960" loading="lazy"></button><figcaption>Lábios</figcaption></figure>
+        </div>
+        <div class="car-bar">
+          <p class="car-count"><span data-car-now>01</span><span class="car-sep">/</span><span data-car-total>11</span></p>
+          <div class="car-progress" aria-hidden="true"><span data-car-fill></span></div>
+          <div class="car-arrows">
+            <button type="button" class="car-nav car-prev" aria-label="Fotos anteriores">&#8249;</button>
+            <button type="button" class="car-nav car-next" aria-label="Próximas fotos">&#8250;</button>
+          </div>
+        </div>
         </div>
         <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
           <button type="button" class="lb-close" aria-label="Fechar">&times;</button>
@@ -257,60 +328,7 @@
           <button type="button" class="lb-nav lb-next" aria-label="Próxima foto">&#8250;</button>
           <p class="lb-cap"></p>
         </dialog>
-        <div class="testimonial" id="depoimento">
-          <div class="testimonial-video">
-            <video controls playsinline preload="none" poster="assets/img/depoimento-poster.webp" aria-describedby="depoimento-desc">
-              <source src="assets/video/depoimento.mp4" type="video/mp4">
-              Seu navegador não reproduz vídeos. <a href="assets/video/depoimento.mp4">Baixe o vídeo do depoimento</a>.
-            </video>
-          </div>
-          <div class="testimonial-copy">
-            <h3>A experiência de quem já passou pelo atendimento.</h3>
-            <p class="testimonial-proc">Lipo de papada</p>
-            <p id="depoimento-desc">Vídeo de paciente, publicado com autorização formal. Toque para reproduzir com som.</p>
-          </div>
-        </div>
-        <p class="disclaimer">Imagens e vídeo publicados com autorização formal dos pacientes. Os resultados variam de pessoa para pessoa e dependem de avaliação clínica individual; as imagens não representam garantia de resultado.</p>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section class="section section-light" id="agendamento" aria-labelledby="ag-title">
-      <div class="container">
-        <header class="section-head">
-          <h2 id="ag-title">Do primeiro contato<br>à avaliação.</h2>
-        </header>
-        <ol class="steps">
-          <li><span class="step-n">01</span><h3>Conheça</h3><p>Veja os tratamentos e a forma de atendimento aqui no site.</p></li>
-          <li><span class="step-n">02</span><h3>Clique</h3><p>Toque no botão do WhatsApp — a mensagem inicial já vem pronta.</p></li>
-          <li><span class="step-n">03</span><h3>Envie</h3><p>Envie a mensagem ao consultório e conte o que procura.</p></li>
-          <li><span class="step-n">04</span><h3>Agende</h3><p>O profissional ou a equipe informa a disponibilidade e orienta sobre a avaliação.</p></li>
-        </ol>
-        <p class="note">O botão inicia uma conversa pelo WhatsApp. A consulta só é confirmada após o retorno do consultório.</p>
-
-        <div class="eval">
-          <div class="eval-col">
-            <h3>O que acontece na avaliação</h3>
-            <ol class="eval-list">
-              <li><strong>Conversa inicial.</strong> Você conta o que incomoda, o que gostaria de mudar e quais são suas expectativas.</li>
-              <li><strong>Histórico de saúde.</strong> Perguntas sobre saúde geral, medicamentos em uso, alergias e tratamentos anteriores.</li>
-              <li><strong>Exame clínico.</strong> Análise das proporções, da simetria, da pele e das expressões do rosto.</li>
-              <li><strong>Registros.</strong> Fotografias ou exames complementares podem ser solicitados para o planejamento, sempre com o seu consentimento.</li>
-              <li><strong>Plano e valores.</strong> O profissional explica as alternativas indicadas, etapas, cuidados e investimento — sem compromisso de iniciar o tratamento.</li>
-            </ol>
-          </div>
-          <aside class="eval-col eval-aside" aria-label="Como se preparar">
-            <h3>Como se preparar</h3>
-            <ul class="check-list">
-              <li>Documento com foto.</li>
-              <li>Lista de medicamentos que você usa.</li>
-              <li>Exames ou radiografias recentes, se tiver.</li>
-              <li>Suas dúvidas anotadas — nenhuma pergunta é pequena demais.</li>
-              <li>Chegue alguns minutos antes do horário combinado.</li>
-            </ul>
-            <p class="eval-pay"><span>Formas de pagamento</span>Crédito, débito, Pix ou dinheiro</p>
-          </aside>
-        </div>
+        <p class="disclaimer">Imagens publicadas com autorização formal dos pacientes. Os resultados variam de pessoa para pessoa e dependem de avaliação clínica individual; as imagens não representam garantia de resultado.</p>
       </div>
     </section>
 
@@ -330,8 +348,8 @@
             <p>O atendimento é particular e com agendamento personalizado, mediante contato prévio. Tudo começa por uma avaliação, na qual o profissional entende suas expectativas e explica as indicações possíveis.</p>
           </details>
           <details>
-            <summary>Quais tratamentos estão disponíveis?</summary>
-            <p>Procedimentos de harmonização orofacial: rinomodelação, lábios e lipo de papada. A indicação de cada tratamento depende de avaliação clínica.</p>
+            <summary>Quais procedimentos estão disponíveis?</summary>
+            <p>Harmonização facial (preenchimento, botox, bioestimulador de colágeno e fios de PDO) e cirurgias estéticas da face. A lista completa está na seção Procedimentos; a indicação de cada um depende de avaliação clínica.</p>
           </details>
           <details>
             <summary>Onde fica o consultório?</summary>
@@ -361,22 +379,23 @@
           </a>
           <div><a class="btn btn-ghost" href="https://www.instagram.com/dr.alvaromarcelopr/" target="_blank" rel="noopener">Seguir no Instagram</a></div>
         </div>
-        <div class="ig-videos">
-          <h3>Vídeos do Instagram</h3>
-          <ul class="ig-embeds">
-            <li class="ig-embed" data-permalink="https://www.instagram.com/reel/DXZJd9Px4a1/">
-              <div class="ig-embed-placeholder">
-                <span class="ig-embed-proc">Rinomodelação</span>
-                <button type="button" class="ig-embed-load">
-                  <svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>
-                  Carregar vídeo
-                </button>
-                <p>Ao carregar, o conteúdo é exibido pelo Instagram, que pode coletar dados de navegação.</p>
-                <a href="https://www.instagram.com/reel/DXZJd9Px4a1/" target="_blank" rel="noopener">Abrir no Instagram</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <figure class="ig-feature" id="depoimento">
+          <div class="testimonial-video">
+            <video controls playsinline preload="metadata" aria-describedby="depoimento-desc">
+              <source src="assets/video/depoimento-2.mp4#t=0.5" type="video/mp4">
+              Seu navegador não reproduz vídeos. <a href="assets/video/depoimento-2.mp4">Baixe o vídeo</a>.
+            </video>
+          </div>
+          <figcaption class="testimonial-copy">
+            <p class="testimonial-proc">Lipo de papada</p>
+            <h3>Lipo de papada, explicada pelo Dr. Álvaro.</h3>
+            <p id="depoimento-desc">Em pouco mais de um minuto, o Dr. Álvaro explica como funciona o procedimento e para quem ele pode ser indicado. Toque para assistir com som.</p>
+            <a class="ig-more" href="https://www.instagram.com/dr.alvaromarcelopr/" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-ig"/></svg>
+              Ver mais vídeos no Instagram
+            </a>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -384,7 +403,7 @@
     <section class="section section-dark cta" id="contato" aria-labelledby="cta-title">
       <div class="cta-glow" aria-hidden="true"></div>
       <div class="container cta-inner">
-        <h2 id="cta-title">Seu próximo passo começa<br>com uma conversa.</h2>
+        <h2 id="cta-title">Seu próximo passo começa com uma conversa.</h2>
         <p class="section-lead">Entre em contato para obter informações sobre os tratamentos e consultar a disponibilidade para uma avaliação.</p>
         <div class="cta-actions">
           <a class="btn btn-wa btn-lg" data-wa href="https://wa.me/5511982417600" target="_blank" rel="noopener">
@@ -416,7 +435,7 @@
       <nav aria-label="Rodapé">
         <ul class="footer-nav">
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#tratamentos">Tratamentos</a></li>
+          <li><a href="#procedimentos">Procedimentos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>

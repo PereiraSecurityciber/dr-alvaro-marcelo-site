@@ -18,8 +18,12 @@ export const SITE = {
   pagamento: ['crédito', 'débito', 'Pix', 'dinheiro'],
   regiao: 'São Paulo/SP',
   // Pendentes de confirmação pelo profissional:
-  endereco: null, // ex.: 'Rua Exemplo, 123 — Bairro, Cidade/SP'
-  mapaEmbedUrl: null, // URL de incorporação do Google Maps
+  endereco: 'Avenida Conselheiro Carrão, 284 — Sala 405, Chácara Califórnia, São Paulo/SP',
+  // Google Maps (incorporação oficial, sem chave de API) e link de rota
+  mapaEmbedUrl:
+    'https://www.google.com/maps?q=Avenida%20Conselheiro%20Carr%C3%A3o%2C%20284%2C%20Ch%C3%A1cara%20Calif%C3%B3rnia%2C%20S%C3%A3o%20Paulo%20-%20SP&output=embed&hl=pt-BR&z=17',
+  mapaRotaUrl:
+    'https://www.google.com/maps/dir/?api=1&destination=Avenida%20Conselheiro%20Carr%C3%A3o%2C%20284%2C%20Ch%C3%A1cara%20Calif%C3%B3rnia%2C%20S%C3%A3o%20Paulo%20-%20SP',
   horarios: null, // ex.: 'Segunda a sexta, 9h às 19h'
 };
 
