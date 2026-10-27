@@ -738,18 +738,15 @@ h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 400; max-width: 16ch;
   .contact-list a { overflow-wrap: anywhere; }
 }
 
-/* Celular e tablet empilhados: moldura quadrada como a foto, retrato aparece por completo */
-@media (max-width: 960px) and (orientation: portrait) {
-  .hero-visual { aspect-ratio: 1 / 1; }
-  .portrait { inset: 0; }
+/* Celular: retrato quadrado de borda a borda, foto aparece por completo */
+@media (max-width: 600px) and (orientation: portrait) {
+  .hero { padding-top: calc(var(--header-h) + 12px); }
+  .hero-visual { aspect-ratio: 1 / 1; width: calc(100% + 2 * var(--gutter)); max-width: none; margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter)); justify-self: stretch; }
+  .portrait { inset: 0; border-radius: 0; }
+  .portrait::before { display: none; }
   .portrait img { object-position: 50% 50%; transform: none; }
   .portrait::after { background: linear-gradient(180deg, transparent 75%, rgba(10,10,10,.45) 100%); }
-}
-
-/* Celular: retrato limitado pela altura da tela para o título aparecer na primeira tela */
-@media (max-width: 600px) and (orientation: portrait) {
-  .hero { padding-top: calc(var(--header-h) + 20px); }
-  .hero-visual { max-width: min(340px, 40vh); max-width: min(340px, 40svh); }
+  .hero-ring { display: none; }
 }
 
 /* Título do contato: quebra equilibrada em qualquer largura, sem palavra órfã */
