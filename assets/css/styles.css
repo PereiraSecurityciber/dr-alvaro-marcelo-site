@@ -738,17 +738,23 @@ h2 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); font-weight: 400; max-width: 16ch;
   .contact-list a { overflow-wrap: anywhere; }
 }
 
-/* Celular: retrato ocupa a primeira tela inteira; título entra por cima, na parte de baixo */
+/* Celular: primeira tela inteira com a foto completa (sem corte); o cinza do estúdio
+   preenche o restante e escurece para o título entrar por baixo */
 @media (max-width: 600px) and (orientation: portrait) {
-  .hero { display: block; padding: max(calc(100vh - 400px), 50vh) 0 48px; padding-top: max(calc(100svh - 400px), 50svh); }
+  .hero { display: block; padding: max(calc(100vh - 440px), 46vh) 0 48px; padding-top: max(calc(100svh - 440px), 46svh); }
   .hero-grid { position: static; }
   .hero-visual { position: absolute; top: var(--header-h); left: 0; right: 0; justify-self: stretch; width: auto; max-width: none; height: calc(100vh - var(--header-h)); height: calc(100svh - var(--header-h)); margin: 0; aspect-ratio: auto; z-index: 0; }
-  .portrait { inset: 0; border-radius: 0; box-shadow: none; }
+  .portrait { inset: 0; border-radius: 0; box-shadow: none; background: linear-gradient(180deg, #8f8d8b 0%, #a9a5a1 35%, #8a8582 50%, #2a2928 66%, var(--black) 82%); }
   .portrait::before { display: none; }
-  .portrait img { object-position: 50% 0; transform: none; }
-  .portrait::after { background: linear-gradient(180deg, transparent 45%, rgba(10,10,10,.7) 68%, var(--black) 100%); }
+  .portrait img { height: auto; aspect-ratio: 1 / 1; object-fit: contain; transform: none; -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 72%, transparent 100%); }
+  .portrait::after { background: linear-gradient(180deg, transparent 40%, rgba(10,10,10,.6) 52%, rgba(10,10,10,.9) 62%, var(--black) 80%); }
   .hero-copy { position: relative; z-index: 2; }
   .hero-ring, .hero-grain { display: none; }
+
+  /* Letreiro em destaque */
+  .hero-kicker { display: inline-block; padding: 6px 14px; border: 1px solid rgba(217,217,217,.35); border-radius: 999px; background: rgba(10,10,10,.45); color: var(--silver-light); font-size: .82rem; letter-spacing: .04em; margin-bottom: 1.1rem; }
+  .hero h1 { font-size: clamp(2.7rem, 12.5vw, 3.6rem); font-weight: 500; line-height: 1; margin-bottom: 1.1rem; filter: drop-shadow(0 2px 14px rgba(0,0,0,.6)); }
+  .hero h1 em { background: linear-gradient(100deg, #bdbdbd 0%, #ffffff 40%, #cfcfcf 70%, #ececec 100%); -webkit-background-clip: text; background-clip: text; }
 }
 
 /* Título do contato: quebra equilibrada em qualquer largura, sem palavra órfã */
